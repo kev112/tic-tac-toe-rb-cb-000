@@ -90,17 +90,7 @@ def won?(board)
 end
 
 def full?(board)
-  i = 0
-  board.each do
-    if position_taken?(board, i)
-      i += 1
-      if i == 9
-        return true
-      end
-    else
-      return false
-    end
-  end
+  board.all?{|token| token == "X" || token == "O"}
 end
 
 def position_taken?(board, index)
