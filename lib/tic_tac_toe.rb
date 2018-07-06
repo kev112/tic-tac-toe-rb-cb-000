@@ -16,27 +16,14 @@ def move(board, index, current_player)
   board[index] = current_player
 end
 
-<<<<<<< HEAD
-
-=======
-def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
-end
->>>>>>> f0096dfdfc3041e0799ef46b386fe4806248f13a
-
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
 def turn(board)
   puts "Please enter 1-9:"
-<<<<<<< HEAD
   user_input = gets.strip
   index = input_to_index(user_input)
-=======
-  input = gets.strip
-  index = input_to_index(input)
->>>>>>> f0096dfdfc3041e0799ef46b386fe4806248f13a
   if valid_move?(board, index)
     move(board, index, current_player(board))
     display_board(board)
@@ -47,7 +34,6 @@ end
 
 # Define your play method below
 def play(board)
-<<<<<<< HEAD
   while !over?(board)
     turn(board)
   end
@@ -55,18 +41,6 @@ def play(board)
     puts "Congratulations #{winner(board)}!"
   elsif draw?(board)
     puts "Cat's Game!"
-=======
-  loop do
-    turn(board)
-    if over?(board)
-      break
-    end
-  end
-  if won?(board)
-    puts `won #{current_player(board)}`
-  elsif draw?(board)
-    puts 'draw'
->>>>>>> f0096dfdfc3041e0799ef46b386fe4806248f13a
   end
 end
 
@@ -129,25 +103,12 @@ def full?(board)
   end
 end
 
-<<<<<<< HEAD
 def position_taken?(board, index)
   board[index]== "X" || board[index] == "O"
 end
 
 def draw?(board)
   !won?(board) && full?(board)
-=======
-def draw?(board)
-  if full?(board)
-    if won?(board)
-      return false
-    else
-      return true
-    end
-  else
-    return false
-  end
->>>>>>> f0096dfdfc3041e0799ef46b386fe4806248f13a
 end
 
 def over?(board)
